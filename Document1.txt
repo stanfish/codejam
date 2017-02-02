@@ -1,0 +1,79 @@
+ public void sorting(Vector v){
+	  int numSorted=0;
+	  int index;
+	  while(numSorted<v.size()){
+		  Long temp=(Long)(v.elementAt(numSorted));
+		  int i=numSorted;
+		  for(i=numSorted;i>0;i--){
+			  if (temp.compareTo((Long)(v.elementAt(i-1)))<0){
+				  v.setElementAt(v.elementAt(i-1),i);
+			  }
+			  else {
+				  break;
+			  }
+
+		  }
+		  v.setElementAt(temp,i);
+		  numSorted++;
+	  }
+  }
+
+
+	public double dist(Point p1,Point p2){
+		return ((p1.getY()-p2.getY())*(p1.getY()-p2.getY())+(p1.getX()-p2.getX())*(p1.getX()-p2.getX()));
+	}
+	
+	
+
+class Time{
+	int min,hr;
+	public Time(int h, int m) {
+		hr=h;
+		min=m;
+	}
+
+
+	public String toString(){
+		return hr+":"+min;
+	}
+
+	public int getMin(){return min;}
+	public int getHr(){return hr;}
+}	
+
+http://www.idevelopment.info/data/Programming/data_structures/java/gcd/GCD.java
+public int GCD(int m, int n) {
+	if (m < n) {
+		int t = m;
+		m = n;
+		n = t;
+	}
+	int r = m % n;
+	if (r == 0)
+		return n;
+	else
+		return GCD(n, r);
+}
+
+public int LCD(int a, int b) {
+	return (a*b/GCD(a,b));
+}
+
+public int fact(int n){
+	int a=1;
+	for (int i=1;i<=n;i++){
+		a*=i;
+	}
+	return a;
+}
+
+public boolean isPrime(int foo){
+	if (foo>0){
+		for (int i=2; i<foo; i++){
+			if (foo%i==0)
+				return false;
+		}
+		return true;
+	}
+	return false;
+}
